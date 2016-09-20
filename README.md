@@ -16,13 +16,13 @@ Base image for fast create app-containers
 
 Example of `Dockerfile` for raw `war` files:
 
-    FROM centos:7
+    FROM taskdata/docker-centos-7-systemd-tomcat
     MAINTAINER Pavel Alexeev
     COPY *.war /var/lib/tomcat/webapps/
 
 If you are using rpm (recommended):
 
-    FROM centos:7
+    FROM taskdata/docker-centos-7-systemd-tomcat
     MAINTAINER Pavel Alexeev
     COPY *.rpm /
     RUN yum install -y /*.rpm \
