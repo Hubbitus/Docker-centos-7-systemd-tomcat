@@ -2,7 +2,7 @@
 
 Base image for fast create app-containers
 
-* Systemd enables by official documentation: https://hub.docker.com/_/centos/
+* Systemd enabled by official documentation: https://hub.docker.com/_/centos/
   * Also look at
     - https://rhatdan.wordpress.com/2014/04/30/running-systemd-within-a-docker-container/
     - https://maci0.wordpress.com/2014/07/23/run-systemd-in-an-unprivileged-docker-container/ (https://github.com/maci0/docker-systemd-unpriv/blob/master/Dockerfile)
