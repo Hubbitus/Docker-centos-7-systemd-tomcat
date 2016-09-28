@@ -11,7 +11,7 @@ ENV container docker
 RUN yum -y install systemd systemd-libs dbus && \
     systemctl mask dev-mqueue.mount dev-hugepages.mount systemd-remount-fs.service sys-kernel-config.mount \
         sys-kernel-debug.mount sys-fs-fuse-connections.mount display-manager.service graphical.target systemd-logind.service && \
-    yum -y install tomcat mutlitail && \
+    yum -y install tomcat tomcat-native mutlitail && \
         systemctl enable tomcat && \
         systemctl enable dbus.service && \
     yum clean all && \
