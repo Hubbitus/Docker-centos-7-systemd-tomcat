@@ -9,7 +9,7 @@ Base image for fast create app-containers
 * Based on latest CentOs 7 image
 * Include next main packages:
   * `systemd` as service
-  * `tomcat` 8 run as service.
+  * `tomcat` 8 run as service (and use UTF-8 encoding).
 * By default exposed port `8080`
 
 ## Built nesting dockerized apps

@@ -14,7 +14,8 @@ RUN yum -y install systemd systemd-libs dbus && \
     yum -y install tomcat mutlitail && \
         systemctl enable tomcat && \
         systemctl enable dbus.service && \
-    yum clean all
+    yum clean all && \
+        sed -i 's#<Connector port="8080" protocol="HTTP/1.1"#<Connector port="8080" protocol="HTTP/1.1" URIEncoding="UTF-8"#' /etc/tomcat/server.xml
 
 VOLUME ["/sys/fs/cgroup"]
 VOLUME ["/run"]
