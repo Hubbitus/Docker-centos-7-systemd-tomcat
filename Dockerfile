@@ -11,11 +11,12 @@ ENV container docker
 RUN yum -y install systemd systemd-libs dbus && \
     systemctl mask dev-mqueue.mount dev-hugepages.mount systemd-remount-fs.service sys-kernel-config.mount \
         sys-kernel-debug.mount sys-fs-fuse-connections.mount display-manager.service graphical.target systemd-logind.service && \
-    yum -y install tomcat tomcat-native mutlitail && \
+    yum -y install tomcat tomcat-native && \
         systemctl enable tomcat && \
+            sed -i 's#<Connector port="8080" protocol="HTTP/1.1"#<Connector port="8080" protocol="HTTP/1.1" URIEncoding="UTF-8"#' /etc/tomcat/server.xml && \
         systemctl enable dbus.service && \
-    yum clean all && \
-        sed -i 's#<Connector port="8080" protocol="HTTP/1.1"#<Connector port="8080" protocol="HTTP/1.1" URIEncoding="UTF-8"#' /etc/tomcat/server.xml
+            chmod 0644 /etc/systemd/system/dbus.service && \
+    yum clean all
 
 VOLUME ["/sys/fs/cgroup"]
 VOLUME ["/run"]
