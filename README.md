@@ -12,6 +12,9 @@ Base image for fast create app-containers
   * `tomcat` 7 (+ `tomcat-native`) run as service (and use UTF-8 encoding).
 * By default exposed port `8080`
 
+## Automated images available on docker hub
+https://hub.docker.com/r/taskdata/docker-centos-7-systemd-tomcat/
+
 ## Built nesting dockerized apps
 
 Example of `Dockerfile` for raw `war` files:
