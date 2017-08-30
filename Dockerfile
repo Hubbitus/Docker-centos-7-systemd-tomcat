@@ -26,6 +26,7 @@ CMD ["/usr/sbin/init"]
 
 EXPOSE 8080
 
+## Example of usage this container in case of extending
 ## Separate install command to allow layers caching
 #COPY *.rpm /
 #RUN yum install -y /*.rpm \
